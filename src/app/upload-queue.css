@@ -1,0 +1,104 @@
+.upload-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 0 0;
+}
+
+.upload-summary strong {
+  font: 700 22px Syne, sans-serif;
+}
+
+.upload-summary span,
+.file-status {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.file-list {
+  max-height: 360px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.file-row {
+  align-items: flex-start;
+}
+
+.file-details {
+  min-width: 0;
+  flex: 1;
+}
+
+.file-details strong,
+.file-details small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-details strong {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.file-details small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.file-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.file-progress {
+  height: 2px;
+  margin-top: 8px;
+  background: var(--line);
+}
+
+.file-progress span {
+  display: block;
+  height: 100%;
+  background: var(--coral);
+  transition: width 0.2s;
+}
+
+.file-row.complete .file-dot {
+  background: #3d7a47;
+}
+
+.file-row.error .file-dot {
+  background: #b33d2d;
+}
+
+.file-row.uploading .file-status {
+  color: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .file-list {
+    max-height: 42vh;
+  }
+
+  .upload-summary strong {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .queue {
+    padding: 18px;
+  }
+
+  .upload-summary span {
+    font-size: 8px;
+  }
+}
